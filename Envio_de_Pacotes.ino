@@ -3,10 +3,10 @@
 #include <WiFiUdp.h>
 #include <PubSubClient.h>
 
-const char* ssid = "Iniesta";
-const char* senha = "ozzy01042019rir";
+const char* ssid = "SSID";
+const char* senha = "SENHA";
 
-const char* servidoMQTT = "192.168.15.10";
+const char* servidorMQTT = "192.168.15.10";
 const int portaMQTT = 1884;
 
 const char* servidorHTTP = "http://192.168.15.10:5001/latencia";
@@ -29,7 +29,7 @@ void geraDados(uint8_t* buffer, size_t len) {
 void MQTT() {
   Serial.print("\n");
 
-  mqttClient.setServer(servidoMQTT, portaMQTT);
+  mqttClient.setServer(servidorMQTT, portaMQTT);
 
   if (mqttClient.connect("ESP32CAM")) {
     Serial.print("ESP Conectado!");
